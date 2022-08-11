@@ -1,18 +1,11 @@
 import * as React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Seo from "../components/seo"
-import {
-  Container,
-  GridItem,
-  Center,
-  Heading,
-  SimpleGrid,
-  Text,
-  Stack,
-  Button,
-} from "@chakra-ui/react"
+import { Container } from "@chakra-ui/react"
+import Hero from "../components/hero"
+import PageItem from "../components/pageItem"
 
 export default function Index({ data }) {
   return (
@@ -24,58 +17,24 @@ export default function Index({ data }) {
         lang="en"
         title="Home"
       />
-      <Container mt="24" mb="24" maxW="container.lg">
-        <Heading lineHeight="130%" size="xl" fontWeight={400}>
-          Amy is a designer and developer obssessed with design systems,
-          decision-making, and the brain. She studies psychology and computer
-          science at Stanford. Currently, she works on a frontend team at{" "}
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href=" https://www.accenture.com/us-en/about/accenture-song-index"
-          >
-            Accenture Song
-          </a>
-          .
-        </Heading>
-      </Container>
+      <Hero />
       <Container maxW="container.xl">
         {data.allMdx.nodes.map(node => (
-          <article key={node.id}>
-            <SimpleGrid mb="12" columns={[1, 1, 1, 2]} spacing={[0, 6, 12]}>
-              <GridItem>
-                <Center>
-                  <GatsbyImage
-                    layout="fullHeight"
-                    objectFit={"cover"}
-                    image={getImage(node.frontmatter.hero_image)}
-                    alt={node.frontmatter.hero_image_alt}
-                  />
-                </Center>
-              </GridItem>
-              <GridItem mb="6" padding={[3, 3, 8]}>
-                <Heading size="lg">
-                  <Link to={`/${node.slug}`}>{node.frontmatter.title}</Link>
-                </Heading>
-                <p>{node.frontmatter.description}</p>
-
-                <Stack
-                  direction={["column", "column", "row"]}
-                  spacing={4}
-                  align="center"
-                >
-                  <Button colorScheme="blue">
-                    <Link to={`/${node.slug}`}>Read case study</Link>
-                  </Button>
-                  <Button colorScheme="blue" variant="outline">
-                    <a href={node.frontmatter.external_link}>
-                      <Text>{node.frontmatter.external_title}</Text>
-                    </a>
-                  </Button>
-                </Stack>
-              </GridItem>
-            </SimpleGrid>
-          </article>
+          <PageItem
+            title={node.frontmatter.title}
+            id={node.id}
+            external_link={node.frontmatter.external_link}
+            external_title={node.frontmatter.external_title}
+            slug={node.slug}
+            description={node.frontmatter.description}
+          >
+            <GatsbyImage
+              layout="fullHeight"
+              objectFit={"cover"}
+              image={getImage(node.frontmatter.hero_image)}
+              alt={node.frontmatter.hero_image_alt}
+            />
+          </PageItem>
         ))}
       </Container>
     </Layout>
@@ -83,23 +42,28 @@ export default function Index({ data }) {
 }
 
 export const query = graphql`
-  query {
-    allMdx(sort: { fields: frontmatter___date, order: DESC }) {
+  {
+    allMdx(filter: { frontmatter: { tags: { in: "featured", nin: "blog" } } }) {
       nodes {
+        id
+        body
         frontmatter {
-          external_link
-          external_title
-          date(formatString: "MMMM D, YYYY")
-          title
           description
-          hero_image_alt
           hero_image {
             childImageSharp {
               gatsbyImageData
             }
           }
+          hero_image_alt
+          role
+          slug
+          team
+          external_link
+          external_title
+          title
+          tools
+          tags
         }
-        id
         slug
       }
     }

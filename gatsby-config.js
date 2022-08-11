@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `AMYFLO`,
+    title: `Amy F. Lo`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `Amy Lo`,
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
@@ -16,7 +16,7 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: `md`,
-        path: `${__dirname}/blog`,
+        path: `${__dirname}/writings`,
       },
     },
     {

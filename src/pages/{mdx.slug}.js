@@ -5,7 +5,6 @@ import ScrollToTop from "react-scroll-to-top"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { ChakraProvider, Container, Heading } from "@chakra-ui/react"
 import Navigation from "../components/nav"
-import Footer from "../components/footer"
 import Seo from "../components/seo"
 
 export default function post({ data }) {
@@ -33,6 +32,7 @@ export default function post({ data }) {
         >
           {post.frontmatter.description}
         </Heading>
+        <p>{post.timeToRead + 3} min read</p>
         <GatsbyImage
           style={{ margin: "auto" }}
           layout="fullWidth"
@@ -45,7 +45,6 @@ export default function post({ data }) {
           {post.body}
         </MDXRenderer>
       </Container>
-      <Footer />
     </ChakraProvider>
   )
 }
@@ -54,10 +53,11 @@ export const query = graphql`
   query ($id: String) {
     mdx(id: { eq: $id }) {
       body
+      timeToRead
       frontmatter {
         title
+
         description
-        date(formatString: "MMMM DD, YYYY")
         hero_image_alt
         role
         team

@@ -37,6 +37,8 @@ export default function Navigation() {
         <Spacer />
         <Flex mr="18" display={["none", "none", "flex", "flex"]}>
           <HStack spacing="18px">
+            <Link to="/design">Design</Link>
+            <Link to="/code">Code</Link>
             <a
               target="_blank"
               rel="noreferrer"
@@ -51,6 +53,7 @@ export default function Navigation() {
             >
               LinkedIn
             </a>
+
             <Link to="/resume">Resume</Link>
             <Link to="/about">About</Link>
           </HStack>
@@ -101,6 +104,14 @@ export default function Navigation() {
         <Flex flexDir="column" align="center">
           <Link to="/">
             <Heading>Home</Heading>
+          </Link>
+
+          <Link to="/design">
+            <Heading>Design</Heading>
+          </Link>
+
+          <Link to="/code">
+            <Heading>Code</Heading>
           </Link>
           <a
             target="_blank"

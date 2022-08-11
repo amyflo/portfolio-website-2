@@ -1,0 +1,40 @@
+---
+title: "Blinn-Phong Recursive Ray Tracer"
+description: "A simple recursive ray tracer using the Blinn-Phong model. Created for Stanford's CS148, an intro class for computer graphics and imaging."
+date: "2022-07-12"
+slug: "/blinn-phong"
+hero_image: "./cover.png"
+hero_image_alt: "hi"
+embeddedImagesLocal:
+role: Developer
+team: Vivian Xiao
+tools: Blender, Python
+external_link: https://youtu.be/n4uBKptOPYg
+external_title: Watch demo video
+tags: 
+- code
+---
+
+import {
+  Stack,
+  Container,
+  Button,
+  Box,
+  Heading,
+  SimpleGrid,
+  List,
+  ListItem,
+  ListIcon,
+  OrderedList,
+  UnorderedList,
+} from "@chakra-ui/react"
+import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react"
+import { getImage, GatsbyImage } from "gatsby-plugin-image"
+
+For CS148: Introduction to Computer Graphics, my partner and I rendered a scene using the Blinn-Phong reflection model, adding a shadow ray, ambient light, reflection, fresnel, and transmission. This was done using a ray tracing algorithm using recursion to approximate how a surface interacts with light.
+
+The Blinn-Phong reflection model method breaks up lighting into diffuse, specular and ambient reflection. This simple recursive ray tracer is used for mirror-like objects (e.g. metals, water) which reflect light or transparent objects (e.g. glass, water) which need light to pass through. Vivian and I implemented a simple recursive ray-tracing algorithm to model glass and reflective surfaces in the scene.
+
+While I can't disclose the details of my project implementation due to Stanford's Honor Code, feel free to [contact me](mailto:amyflo@stanford.edu) if you would like to learn more.
+
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/n4uBKptOPYg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
