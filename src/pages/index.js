@@ -5,7 +5,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Seo from "../components/seo"
 import { Container } from "@chakra-ui/react"
 import Hero from "../components/hero"
-import PageItem from "../components/pageItem"
+import PageItem from "../components/PageItem"
 
 export default function Index({ data }) {
   return (
