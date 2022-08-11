@@ -3,7 +3,6 @@ import "./layout.module.css"
 import ScrollToTop from "react-scroll-to-top"
 import { ChakraProvider } from "@chakra-ui/react"
 import Navigation from "./nav"
-import Footer from "./footer"
 
 export default function Layout({ children }) {
   return (
@@ -15,7 +14,6 @@ export default function Layout({ children }) {
       />
       <Navigation />
       {children}
-      <Footer />
     </ChakraProvider>
   )
 }

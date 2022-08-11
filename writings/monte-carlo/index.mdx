@@ -1,0 +1,38 @@
+---
+title: "Monte Carlo Recursive Ray Tracer"
+description: "A Monte-Carlo recursive ray tracer of the Classic Cornell box. Created for Stanford's CS148, an intro class for computer graphics and imaging."
+date: "2022-07-12"
+slug: "/monte-carlo"
+hero_image: "./monte-carlo.png"
+hero_image_alt: "hi"
+embeddedImagesLocal:
+role: Developer
+team: Vivian Xiao
+tools: Blender, Python
+external_link: https://www.youtube.com/watch?v=_xql_hmqZrc&feature=emb_title&ab_channel=AmyLo
+external_title: Watch demo video
+tags: 
+- code
+---
+
+import {
+  Stack,
+  Container,
+  Button,
+  Box,
+  Heading,
+  SimpleGrid,
+  List,
+  ListItem,
+  ListIcon,
+  OrderedList,
+  UnorderedList,
+} from "@chakra-ui/react"
+import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react"
+import { getImage, GatsbyImage } from "gatsby-plugin-image"
+
+Building off of our [Blinn-Phong simple recursive ray tracer](), Vivian and I implemented a Monte-Carlo recursive ray tracer using indirect diffuse lighting in stages. Using low-discrepancy sequencing and simple sampling, we gave our image the effect of “filling in gaps” so that a given area can be covered more evenly and quickly compared to the completely randomized approach.
+
+While I can't disclose the details of my project implementation due to Stanford's Honor Code, feel free to [contact me](mailto:amyflo@stanford.edu) if you would like to learn more.
+
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/_xql_hmqZrc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
