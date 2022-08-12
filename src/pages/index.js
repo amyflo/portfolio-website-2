@@ -43,7 +43,14 @@ export default function Index({ data }) {
 
 export const query = graphql`
   {
+<<<<<<< Updated upstream
     allMdx(filter: { frontmatter: { tags: { in: "featured", nin: "blog" } } }) {
+=======
+    allMdx(
+      sort: { fields: [frontmatter___date], order: [DESC] }
+      filter: { frontmatter: { tags: { in: "featured", nin: "blog" } } }
+    ) {
+>>>>>>> Stashed changes
       nodes {
         id
         body
