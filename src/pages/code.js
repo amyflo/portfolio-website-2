@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Seo from "../components/seo"
 import { Container, Heading } from "@chakra-ui/react"
-import PageItem from "../components/pageItem"
+import PageItem from "../components/PageItem"
 
 export default function Code({ data }) {
   return (

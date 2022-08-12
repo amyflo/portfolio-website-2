@@ -5,7 +5,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Seo from "../components/seo"
 import { Container } from "@chakra-ui/react"
 import Hero from "../components/hero"
-import PageItem from "../components/pageItem"
+import PageItem from "../components/PageItem"
 
 export default function Index({ data }) {
   return (
@@ -43,14 +43,11 @@ export default function Index({ data }) {
 
 export const query = graphql`
   {
-<<<<<<< Updated upstream
-    allMdx(filter: { frontmatter: { tags: { in: "featured", nin: "blog" } } }) {
-=======
-    allMdx(
-      sort: { fields: [frontmatter___date], order: [DESC] }
-      filter: { frontmatter: { tags: { in: "featured", nin: "blog" } } }
-    ) {
->>>>>>> Stashed changes
+    allMdx(sort: {
+      fields: [frontmatter___date]
+      order: [DESC]
+    }, 
+    filter: { frontmatter: { tags: { in: "featured", nin: "blog" } } }) {
       nodes {
         id
         body
