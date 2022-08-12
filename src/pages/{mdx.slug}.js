@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import ScrollToTop from "react-scroll-to-top"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { ChakraProvider, Text, Container, Heading } from "@chakra-ui/react"
+import { ChakraProvider, Center, Text, Container, Heading } from "@chakra-ui/react"
 import Navigation from "../components/nav"
 import Seo from "../components/seo"
 
@@ -29,12 +29,14 @@ export default function post({ data }) {
         <Text mb="12">
           {post.timeToRead + 3} min read • Last updated {post.frontmatter.date}
         </Text>
-        <GatsbyImage
-          style={{ margin: "auto" }}
-          layout="fullWidth"
-          image={getImage(post.frontmatter.hero_image)}
-          alt={post.frontmatter.hero_image_alt}
-        />
+        <Center>
+          <GatsbyImage
+            style={{ margin: "auto" }}
+            layout="fullWidth"
+            image={getImage(post.frontmatter.hero_image)}
+            alt={post.frontmatter.hero_image_alt}
+          />
+        </Center>
       </Container>
       <Container maxW="container.lg">
         <MDXRenderer localImages={post.frontmatter.embeddedImagesLocal}>

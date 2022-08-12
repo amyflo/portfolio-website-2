@@ -45,8 +45,10 @@ export default function Design({ data }) {
 
 export const query = graphql`
   {
-    allMdx(sort: { fields: [frontmatter___date], order: [DESC] },
-      filter: { frontmatter: { tags: { in: "design" } } }) {
+    allMdx(
+      sort: { fields: [frontmatter___date], order: [DESC] }
+      filter: { frontmatter: { tags: { in: "design" } } }
+    ) {
       nodes {
         id
         body

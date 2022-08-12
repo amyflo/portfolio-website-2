@@ -15,7 +15,7 @@ export default function PageItem(props) {
     <article key={props.id}>
       <SimpleGrid mb="12" columns={[1, 1, 1, 2]} spacing={[0, 6, 12]}>
         <GridItem>
-          <Center>{props.children}</Center>
+          {props.children}
         </GridItem>
         <GridItem mb="6" padding={[3, 3, 8]}>
           <Heading size="lg">

@@ -1,0 +1,38 @@
+---
+title: "Faves"
+description: "All my favorite things in the world!"
+date: 2022-08-11
+slug: "/faves"
+hero_image:
+hero_image_alt: 
+embeddedImagesLocal:
+- 1.jpeg
+- 2.jpeg
+- 3.jpeg
+- 4.jpeg
+- 5.jpeg
+- 6.jpeg
+- 7.jpeg
+- 8.jpeg
+- 9.jpeg
+- 10.jpeg
+- 11.jpeg
+- 12.jpeg
+---
+
+import { getImage, GatsbyImage } from "gatsby-plugin-image"
+import {Grid} from "@chakra-ui/react"
+
+<Grid templateColumns='repeat(3, 1fr)' gap={3}>
+    <GatsbyImage alt="alt-text-missing" image={getImage(props.localImages[0])} />
+    <GatsbyImage alt="alt-text-missing" image={getImage(props.localImages[1])} />
+    <GatsbyImage alt="alt-text-missing" image={getImage(props.localImages[2])} />
+    <GatsbyImage alt="alt-text-missing" image={getImage(props.localImages[3])} />
+    <GatsbyImage alt="alt-text-missing" image={getImage(props.localImages[4])} />
+    <GatsbyImage alt="alt-text-missing" image={getImage(props.localImages[5])} />
+    <GatsbyImage alt="alt-text-missing" image={getImage(props.localImages[6])} />
+    <GatsbyImage alt="alt-text-missing" image={getImage(props.localImages[7])} />
+    <GatsbyImage alt="alt-text-missing" image={getImage(props.localImages[8])} />
+    <GatsbyImage alt="alt-text-missing" image={getImage(props.localImages[9])} />
+    <GatsbyImage alt="alt-text-missing" image={getImage(props.localImages[10])} />
+</Grid>
